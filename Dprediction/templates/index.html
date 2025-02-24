@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Form</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://wallpapercave.com/wp/wp7024269.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Login Icon */
+.login-icon {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.login-icon:hover {
+    color: #007BFF; /* Changes color on hover */
+}
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            max-width: 900px;
+        }
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+        }
+        
+        .form-control {
+            background: rgba(255, 255, 255, 0.2);
+             /* Slightly reduced opacity for consistency */
+            transition:  0.3s ease-in-out;
+        }        
+        .btn-custom {
+            background: #ff4b5c;
+            border: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: #ff3a4e;
+        }
+        label {
+            font-weight: 600;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <h3 class="text-center mb-4">Diabetes Prediction Form</h3>
+
+        <!-- Login Icon -->
+        <a href="login.html" class="login-icon">
+               Login <i class="fas fa-user-circle"></i>
+        </a>
+
+        
+        <form action="details" method="POST">
+            {% csrf_token %}
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label>Name</label>
+                    <input type="name" class="form-control" name="name" required placeholder="Enter your name">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" required placeholder="Enter your password">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Number of Pregnancies</label>
+                    <input type="number" class="form-control" name="pregnancies" required placeholder="Enter pregnancies">
+                </div>
+                <div class="col-md-6">
+                    <label>Glucose Level</label>
+                    <input type="number" class="form-control" name="glucose" required placeholder="Enter glucose level">
+                </div>
+                <div class="col-md-6">
+                    <label>Blood Pressure</label>
+                    <input type="number" class="form-control" name="bp" required placeholder="Enter blood pressure">
+                </div>
+                <div class="col-md-6">
+                    <label>Skin Thickness</label>
+                    <input type="number" class="form-control" name="skin" required placeholder="Enter skin thickness">
+                </div>
+                <div class="col-md-6">
+                    <label>Insulin Level</label>
+                    <input type="number" class="form-control" name="insulin" required placeholder="Enter insulin level">
+                </div>
+                <div class="col-md-6">
+                    <label>BMI</label>
+                    <input type="number" step="0.1" class="form-control" name="bmi" required placeholder="Enter BMI value">
+                </div>
+                <div class="col-md-6">
+                    <label>Diabetes Pedigree Function</label>
+                    <input type="number" step="0.01" class="form-control" name="Diabetes" required placeholder="Enter DPF value">
+                </div>
+                <div class="col-md-6">
+                    <label>Age</label>
+                    <input type="number" class="form-control" name="age" required placeholder="Enter your age">
+                </div>
+
+                <div class="col-md-6">
+                    <label>Gender</label>
+                    <select name="gender" required>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">Other</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-custom w-100 mt-4">Predict</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
